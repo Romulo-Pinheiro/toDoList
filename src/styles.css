@@ -1,9 +1,17 @@
+:root {
+  --main-color: #ffa500;
+  --secondary-color: #df362d;
+  --tertiary-color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-  background-color: orange;
+  background-color: var(--main-color);
 }
