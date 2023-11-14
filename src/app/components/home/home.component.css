@@ -19,7 +19,7 @@
 
 form {
   width: 50vw;
-  min-width: 320px;
+  min-width: 260px;
 }
 
 form > input {
@@ -50,9 +50,13 @@ form > button {
   font-size: 24px;
   color: var(--tertiary-color);
 
-  transition: background-color 2s;
+  transition: background-color 1s;
 }
 
 form > button:hover {
   background-color: var(--main-color);
+}
+
+.tasks {
+  margin-top: 20px;
 }
