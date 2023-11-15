@@ -2,17 +2,43 @@
   <img src="assets/icon.png" alt="" />
   <h1><span>To-Do</span> List</h1>
 </div>
-<form [formGroup]="myForm" (ngSubmit)="addTask()">
-  <input
-    type="text"
-    placeholder="Digite o título da sua tarefa"
-    formControlName="title"
-  />
-  <input
-    type="text"
-    placeholder="Digite a descrição da sua tarefa"
-    formControlName="description"
-  />
+<form [formGroup]="myForm" (ngSubmit)="addTask(formTsk)" #formTsk="ngForm">
+  <div class="input-container">
+    <input
+      type="text"
+      placeholder="Digite o título da sua tarefa"
+      formControlName="title"
+    />
+    <div class="validation-error" *ngIf="title?.invalid && formTsk.submitted">
+      <p *ngIf="title?.errors?.['required']">O título é obrigatório</p>
+      <p *ngIf="title?.errors?.['minlength']">
+        O título deve possuir no mínimo 5 caracteres
+      </p>
+      <p *ngIf="title?.errors?.['maxlength']">
+        O título excede o limite de 25 caracteres
+      </p>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input
+      type="text"
+      placeholder="Digite a descrição da sua tarefa"
+      formControlName="description"
+    />
+    <div
+      class="validation-error"
+      *ngIf="description?.invalid && formTsk.submitted"
+    >
+      <p *ngIf="description?.errors?.['required']">A descrição é obrigatória</p>
+      <p *ngIf="description?.errors?.['minlength']">
+        A descrição deve possuir no mínimo 10 caracteres
+      </p>
+      <p *ngIf="description?.errors?.['maxlength']">
+        A descrição excede o limite de 210 caracteres
+      </p>
+    </div>
+  </div>
 
   <button>ADICIONAR</button>
 </form>

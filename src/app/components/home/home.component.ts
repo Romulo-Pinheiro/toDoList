@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroupDirective, Validators } from '@angular/forms';
 import { Task } from 'src/app/task';
 
 @Component({
@@ -15,11 +15,30 @@ export class HomeComponent {
   constructor(private fb: FormBuilder) {}
 
   myForm = this.fb.group({
-    title: this.fb.control(''),
-    description: this.fb.control(''),
+    title: this.fb.control('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(25),
+    ]),
+    description: this.fb.control('', [
+      Validators.required,
+      Validators.minLength(10),
+      Validators.maxLength(210),
+    ]),
   });
 
-  addTask(): void {
+  get title() {
+    return this.myForm.get('title');
+  }
+
+  get description() {
+    return this.myForm.get('description');
+  }
+
+  addTask(formTsk: FormGroupDirective): void {
+    if (this.myForm.invalid) {
+      return;
+    }
     this.newTask = {
       id: this.id,
       title: String(this.myForm.value.title),
@@ -28,6 +47,7 @@ export class HomeComponent {
     this.taskList.push(this.newTask);
     this.newTask = undefined;
     this.myForm.reset();
+    formTsk.resetForm();
     this.id++;
   }
 
