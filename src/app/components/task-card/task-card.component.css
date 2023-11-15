@@ -1,3 +1,8 @@
+.complete {
+  color: var(--secondary-color);
+  text-decoration: line-through;
+}
+
 .task {
   margin-bottom: 15px;
   background-color: #e1dbdb;
@@ -38,7 +43,7 @@
 }
 
 .icon {
-  font-size: 36px;
+  font-size: 32px;
   transition: color 1s;
   color: var(--secondary-color);
 }

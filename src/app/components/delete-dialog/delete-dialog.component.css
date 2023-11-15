@@ -1,0 +1,13 @@
+#title {
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+#cancel {
+  background-color: var(--main-color);
+}
+
+#confirm {
+  background-color: var(--secondary-color);
+  color: #fff;
+}

@@ -1,0 +1,13 @@
+<h1 mat-dialog-title id="title">Deletar tarefa</h1>
+<div mat-dialog-content>Você deseja excluir esta tarefa?</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close id="cancel">Não</button>
+  <button
+    mat-button
+    [mat-dialog-close]="{ proceed: true }"
+    cdkFocusInitial
+    id="confirm"
+  >
+    Sim
+  </button>
+</div>

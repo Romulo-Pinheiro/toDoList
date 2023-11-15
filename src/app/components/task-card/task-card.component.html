@@ -1,21 +1,22 @@
 <div class="task">
-  <div class="task-info">
-    <h2>Título da Tarefa</h2>
+  <div class="task-info" [ngClass]="completeTask ? 'complete' : ''">
+    <h2>{{ task.title }}</h2>
     <hr />
     <br />
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-      dignissimos inventore magnam ipsum vitae animi temporibus sed, optio rem
-      dolores, beatae, eum deserunt expedita doloremque iure alias dolor dolorem
-      libero!
+      {{ task.description }}
     </p>
   </div>
 
   <div class="task-actions">
-    <button>
+    <button (click)="completeTask = !completeTask">
+      <fa-icon [icon]="faCircleCheck" class="icon" id="check-icon"></fa-icon>
+    </button>
+
+    <button (click)="editTask()">
       <fa-icon [icon]="faPenToSquare" class="icon" id="edit-icon"></fa-icon>
     </button>
-    <button>
+    <button (click)="deleteTask()">
       <fa-icon [icon]="faTrashCan" class="icon" id="delete-icon"></fa-icon>
     </button>
   </div>

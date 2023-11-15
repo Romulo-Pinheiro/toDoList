@@ -9,5 +9,7 @@
   <button>ADICIONAR</button>
 </form>
 <div class="tasks">
-  <app-task-card></app-task-card>
+  <app-task-card
+    [task]="{ id: 1, title: 'titulo', description: 'descrição' }"
+  ></app-task-card>
 </div>
