@@ -24,6 +24,11 @@
   border-right: 1px solid grey;
 }
 
+.task-info > h2,
+.task-info > p {
+  word-break: break-word;
+}
+
 .task-actions {
   flex-grow: 1;
   display: flex;
