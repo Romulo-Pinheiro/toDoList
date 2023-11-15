@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, TaskCardComponent],
@@ -16,6 +16,7 @@ import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.
     FontAwesomeModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

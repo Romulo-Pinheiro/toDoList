@@ -2,14 +2,20 @@
   <img src="assets/icon.png" alt="" />
   <h1><span>To-Do</span> List</h1>
 </div>
-<form>
-  <input type="text" placeholder="Digite o título da sua tarefa" />
-  <input type="text" placeholder="Digite a descrição da sua tarefa" />
+<form [formGroup]="myForm" (ngSubmit)="addTask()">
+  <input
+    type="text"
+    placeholder="Digite o título da sua tarefa"
+    formControlName="title"
+  />
+  <input
+    type="text"
+    placeholder="Digite a descrição da sua tarefa"
+    formControlName="description"
+  />
 
   <button>ADICIONAR</button>
 </form>
 <div class="tasks">
-  <app-task-card
-    [task]="{ id: 1, title: 'titulo', description: 'descrição' }"
-  ></app-task-card>
+  <app-task-card *ngFor="let task of taskList" [task]="task"></app-task-card>
 </div>
