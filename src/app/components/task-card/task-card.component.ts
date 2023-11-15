@@ -44,7 +44,7 @@ export class TaskCardComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result.proceed) {
-        this.editTaskEvent.emit(this.task);
+        this.deleteTaskEvent.emit(this.task);
       }
     });
   }
