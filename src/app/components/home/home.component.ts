@@ -30,4 +30,18 @@ export class HomeComponent {
     this.myForm.reset();
     this.id++;
   }
+
+  editTask(task: Task) {
+    this.taskList = this.taskList.map((t) => {
+      if (t.id !== task.id) {
+        return t;
+      }
+      return task;
+    });
+  }
+
+  deleteTask(task: Task) {
+    console.log(task);
+    this.taskList = this.taskList.filter((t) => t.id !== task.id);
+  }
 }

@@ -17,5 +17,10 @@
   <button>ADICIONAR</button>
 </form>
 <div class="tasks">
-  <app-task-card *ngFor="let task of taskList" [task]="task"></app-task-card>
+  <app-task-card
+    (editTaskEvent)="editTask($event)"
+    (deleteTaskEvent)="deleteTask($event)"
+    *ngFor="let task of taskList"
+    [task]="task"
+  ></app-task-card>
 </div>
