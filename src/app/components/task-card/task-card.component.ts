@@ -25,7 +25,7 @@ export class TaskCardComponent {
 
   constructor(public dialog: MatDialog) {}
 
-  editTask() {
+  editTask(): void {
     const dialogRef = this.dialog.open(FormDialogComponent, {
       data: { task: this.task },
     });
@@ -37,7 +37,7 @@ export class TaskCardComponent {
     });
   }
 
-  deleteTask() {
+  deleteTask(): void {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
       width: '250px',
     });

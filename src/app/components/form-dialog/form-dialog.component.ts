@@ -29,7 +29,7 @@ export class FormDialogComponent {
     description: this.fb.control(this.data.task.description),
   });
 
-  editTask() {
+  editTask(): void {
     this.taskModel = {
       id: this.data.task.id,
       title: String(this.myForm.value.title),
