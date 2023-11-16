@@ -2,9 +2,18 @@ h2 {
   text-align: center;
 }
 
+.input-container {
+  margin-bottom: 30px;
+}
+
+.validation-error {
+  margin-top: 5px;
+  color: #dc3545;
+}
+
 input {
   width: 100%;
-  margin-bottom: 30px;
+
   border: none;
   border-bottom: 2px solid var(--main-color);
 
@@ -18,7 +27,7 @@ input:focus {
   outline: 0;
 }
 
-form input:last-child {
+form div:last-child {
   margin-bottom: 5px;
 }
 
