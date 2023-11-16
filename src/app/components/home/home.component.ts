@@ -61,7 +61,6 @@ export class HomeComponent {
   }
 
   deleteTask(task: Task) {
-    console.log(task);
     this.taskList = this.taskList.filter((t) => t.id !== task.id);
   }
 }
