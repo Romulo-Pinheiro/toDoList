@@ -1,25 +1,12 @@
 import { Component, Inject } from '@angular/core';
-import {
-  MAT_DIALOG_DATA,
-  MatDialogModule,
-  MatDialogRef,
-} from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Task } from 'src/app/task';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form-dialog.component.html',
   styleUrls: ['./form-dialog.component.css'],
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatDialogModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-  ],
 })
 export class FormDialogComponent {
   taskModel?: Task;
