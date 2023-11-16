@@ -27,6 +27,7 @@ export class TaskCardComponent {
 
   editTask(): void {
     const dialogRef = this.dialog.open(FormDialogComponent, {
+      width: '600px',
       data: { task: this.task },
     });
 
